@@ -33,5 +33,6 @@ export function ShowOmniSharpConfigChangePrompt(optionObservable: Observable<Opt
 function hasChanged(oldOptions: Options, newOptions: Options): boolean {
     return (oldOptions.path != newOptions.path ||
         oldOptions.useGlobalMono != newOptions.useGlobalMono ||
+        oldOptions.enableOnDemandMsBuildProjectsLoad != newOptions.enableOnDemandMsBuildProjectsLoad ||
         oldOptions.waitForDebugger != newOptions.waitForDebugger);
 }

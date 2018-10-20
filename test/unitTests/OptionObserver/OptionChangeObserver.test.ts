@@ -41,6 +41,7 @@ suite("OmniSharpConfigChangeObserver", () => {
     [
         { config: "omnisharp", section: "path", value: "somePath" },
         { config: "omnisharp", section: "waitForDebugger", value: true },
+        { config: "omnisharp", section: "enableOnDemandMsBuildProjectsLoad", value: true },
         { config: "omnisharp", section: "useGlobalMono", value: "always" }
 
     ].forEach(elem => {

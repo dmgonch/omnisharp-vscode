@@ -24,6 +24,7 @@ export class Options {
         public maxFindSymbolsItems: number,
         public razorDisabled: boolean,
         public razorDevMode: boolean,
+        public enableOnDemandMsBuildProjectsLoad: boolean,
         public razorPluginPath?: string,
         public defaultLaunchSolution?: string,
         public monoPath?: string) { }
@@ -72,6 +73,8 @@ export class Options {
         const minFindSymbolsFilterLength = omnisharpConfig.get<number>('minFindSymbolsFilterLength', 0);
         const maxFindSymbolsItems = omnisharpConfig.get<number>('maxFindSymbolsItems', 1000);   // The limit is applied only when this setting is set to a number greater than zero
 
+        const enableOnDemandMsBuildProjectsLoad = omnisharpConfig.get<boolean>('enableOnDemandMsBuildProjectsLoad', false);
+
         const razorDisabled = !!razorConfig && razorConfig.get<boolean>('disabled', false);
         const razorDevMode = !!razorConfig && razorConfig.get<boolean>('devmode', false);
         const razorPluginPath = razorConfig ? razorConfig.get<string>('plugin.path', undefined) : undefined;
@@ -94,6 +97,7 @@ export class Options {
             maxFindSymbolsItems,
             razorDisabled,
             razorDevMode,
+            enableOnDemandMsBuildProjectsLoad,
             razorPluginPath,
             defaultLaunchSolution,
             monoPath,
